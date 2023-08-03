@@ -18,9 +18,27 @@ public class OarPath : MonoBehaviour
         
     }
 
-    // makes all the oars active- call every time an oar is hit? using events?
+    void OnEnable()
+    {
+        PhantomOar.OnOarHit += ActivateOars;
+    }
+
+    void OnDisable()
+    {
+        PhantomOar.OnOarHit -= ActivateOars;
+    }
+
+    // checks to see if any oars are active, if not, activates all of them
+    // called by hitting an oar
     void ActivateOars()
     {
+        foreach (GameObject oar in phantomOars)
+        {
+            if (oar.activeInHierarchy == true)
+            {
+                break;
+            }
+        }
         foreach (GameObject oar in phantomOars)
         {
             oar.SetActive(true);
