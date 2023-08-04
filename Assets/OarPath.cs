@@ -20,28 +20,39 @@ public class OarPath : MonoBehaviour
 
     void OnEnable()
     {
-        PhantomOar.OnOarHit += ActivateOars;
+        PhantomOar.OnOarHit += CheckOars;
     }
 
     void OnDisable()
     {
-        PhantomOar.OnOarHit -= ActivateOars;
+        PhantomOar.OnOarHit -= CheckOars;
     }
 
     // checks to see if any oars are active, if not, activates all of them
     // called by hitting an oar
-    void ActivateOars()
+    void CheckOars()
     {
+        int count = 0;
         foreach (GameObject oar in phantomOars)
         {
             if (oar.activeInHierarchy == true)
             {
-                break;
+                count++;
             }
         }
-        foreach (GameObject oar in phantomOars)
+        if (count == 0)
         {
-            oar.SetActive(true);
+            Invoke("ActivateOars", 0.2f);
         }
+    }
+
+    void ActivateOars()
+    {
+        foreach (GameObject oar in phantomOars)
+            {
+                oar.SetActive(true);
+                oar.GetComponent<PhantomOar>().prevOarActive = true;
+            }
+            phantomOars[0].GetComponent<PhantomOar>().prevOarActive = false;
     }
 }

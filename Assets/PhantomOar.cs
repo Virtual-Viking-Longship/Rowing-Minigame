@@ -9,6 +9,8 @@ public class PhantomOar : MonoBehaviour
     public TextMeshProUGUI display2;
     public TextMeshProUGUI display3;
     public TextMeshProUGUI display4;
+    public TextMeshProUGUI display5;
+    public TextMeshProUGUI display6;
     public string oarNumber;
     public GameObject space;
     public Collider grabOarCollider;
@@ -42,13 +44,15 @@ public class PhantomOar : MonoBehaviour
             SetInactive();
             if (OnOarHit != null)
             {
+                display5.SetText("event");
                 OnOarHit();
             }
-        }
+            }
     }
 
     void SetInactive()
     {
+        display6.SetText(space.name);
         nextOar.prevOarActive = false;
         space.SetActive(false);
     }
