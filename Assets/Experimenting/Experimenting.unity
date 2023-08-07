@@ -2599,6 +2599,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 879341650343025352}
     - target: {fileID: 7614308675883442260, guid: b2b1415a04b3e4557a362274b863022a, type: 3}
+      propertyPath: oarPath
+      value: 
+      objectReference: {fileID: 698554147}
+    - target: {fileID: 7614308675883442260, guid: b2b1415a04b3e4557a362274b863022a, type: 3}
       propertyPath: display2
       value: 
       objectReference: {fileID: 1410576997}
@@ -2797,11 +2801,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0fe1798ba494b7c8d5ccce5fd07554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oarPath: {fileID: 698554146}
   phantomOars:
   - {fileID: 879341650343025351}
   - {fileID: 830654933}
   - {fileID: 720365697}
   - {fileID: 673004035}
+  scoreBoard: {fileID: 1435977061}
+  turtorialBool: {fileID: 1410576997}
+  roundNumber: {fileID: 1509796806}
+  direction: {fileID: 1855921001}
+  gameOver: {fileID: 370711137}
 --- !u!4 &698554148
 Transform:
   m_ObjectHideFlags: 0
@@ -2888,6 +2898,10 @@ PrefabInstance:
       propertyPath: nextOar
       value: 
       objectReference: {fileID: 673004036}
+    - target: {fileID: 7614308675883442260, guid: b2b1415a04b3e4557a362274b863022a, type: 3}
+      propertyPath: oarPath
+      value: 
+      objectReference: {fileID: 698554147}
     - target: {fileID: 7614308675883442260, guid: b2b1415a04b3e4557a362274b863022a, type: 3}
       propertyPath: display2
       value: 
@@ -3209,6 +3223,10 @@ PrefabInstance:
       propertyPath: nextOar
       value: 
       objectReference: {fileID: 720365698}
+    - target: {fileID: 7614308675883442260, guid: b2b1415a04b3e4557a362274b863022a, type: 3}
+      propertyPath: oarPath
+      value: 
+      objectReference: {fileID: 698554147}
     - target: {fileID: 7614308675883442260, guid: b2b1415a04b3e4557a362274b863022a, type: 3}
       propertyPath: display2
       value: 
@@ -4917,7 +4935,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2020995337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5140,6 +5158,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 830654934}
     - target: {fileID: 7614308675883442260, guid: b2b1415a04b3e4557a362274b863022a, type: 3}
+      propertyPath: oarPath
+      value: 
+      objectReference: {fileID: 698554147}
+    - target: {fileID: 7614308675883442260, guid: b2b1415a04b3e4557a362274b863022a, type: 3}
       propertyPath: display2
       value: 
       objectReference: {fileID: 1410576997}
@@ -5159,6 +5181,10 @@ PrefabInstance:
       propertyPath: display6
       value: 
       objectReference: {fileID: 1011153981}
+    - target: {fileID: 7614308675883442260, guid: b2b1415a04b3e4557a362274b863022a, type: 3}
+      propertyPath: firstOar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7614308675883442260, guid: b2b1415a04b3e4557a362274b863022a, type: 3}
       propertyPath: oarNumber
       value: one

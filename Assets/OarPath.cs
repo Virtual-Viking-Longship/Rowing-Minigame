@@ -1,20 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class OarPath : MonoBehaviour
 {
+    public GameObject oarPath;
     public GameObject[] phantomOars;
 
     int resetCount;
     public delegate void ResetOars();
     public static event ResetOars OnResetOars;
+    public delegate void NextRound();
+    public static event NextRound OnNextRound;
+    int score = 0;
+    bool tutorial = true;
+    int round;
+
+    public TextMeshProUGUI scoreBoard;
+    public TextMeshProUGUI turtorialBool;
+    public TextMeshProUGUI roundNumber;
+    public TextMeshProUGUI direction;
+    public TextMeshProUGUI gameOver;
 
     // Start is called before the first frame update
     void Start()
     {
         Forward();
         resetCount = 0;
+        turtorialBool.SetText("true");
     }
 
     // Update is called once per frame
@@ -27,12 +41,14 @@ public class OarPath : MonoBehaviour
     {
         PhantomOar.OnOarHit += CheckOars;
         OnResetOars += Sequence;
+        OnNextRound += Game;
     }
 
     void OnDisable()
     {
         PhantomOar.OnOarHit -= CheckOars;
         OnResetOars -= Sequence;
+        OnNextRound -= Game;
     }
 
     // checks to see if any oars are active, if not, activates all of them
@@ -63,7 +79,15 @@ public class OarPath : MonoBehaviour
             }
             phantomOars[0].GetComponent<PhantomOar>().prevOarActive = false;
         resetCount++;
-        OnResetOars();
+        if (tutorial)
+        {
+            OnResetOars();
+        } 
+        else
+        {
+            OnNextRound();
+        }
+        
     }
 
     // sets target values for rowing "forward"- ie the user moves the oar away from them first
@@ -102,14 +126,63 @@ public class OarPath : MonoBehaviour
         } else if (resetCount == 11)
         {
             Forward();
-            // timing
+            score = 0;
         } else if (resetCount == 16)
         {
             Backward();
-            // timing
+            score = 0;
         } else if (resetCount > 20) 
-        {
-            // game
+        { 
+            tutorial = false;
+            turtorialBool.SetText("false");
+            // indicate that the game is starting with ui
+            ResetGame();
         }
+    }
+
+    public void AddScore(int points)
+    {
+        score += points;
+        scoreBoard.SetText(score.ToString());
+    }
+
+    void Game()
+    {
+        if (round == 0)
+        {
+            score = 0;
+        }
+        else if (round == 10)
+        {
+            EndGame();
+            gameOver.SetText("Game Over!");
+            oarPath.SetActive(false);
+        }
+
+        int random = Random.Range(0,2);
+        if (random == 0)
+        {
+            direction.SetText("forward");
+            Forward();
+        }
+        else
+        {
+            direction.SetText("backward");
+            Backward();
+        }
+        round++;
+        roundNumber.SetText(round.ToString());
+    }
+
+    void EndGame()
+    {
+        // take score and initials and save them if in top 10, display leaderboard
+    }
+
+    public void ResetGame()
+    {
+        score = 0;
+        round = 0;
+        Game();
     }
 }
