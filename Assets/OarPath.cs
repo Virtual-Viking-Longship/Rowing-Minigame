@@ -17,18 +17,21 @@ public class OarPath : MonoBehaviour
     bool tutorial = true;
     int round;
 
-    public TextMeshProUGUI scoreBoard;
-    public TextMeshProUGUI turtorialBool;
-    public TextMeshProUGUI roundNumber;
-    public TextMeshProUGUI direction;
-    public TextMeshProUGUI gameOver;
+    public GameObject learnForward;
+    public GameObject learnBackward;
+    public GameObject forwardTime;
+    public GameObject backwardTime;
+    public GameObject gameText;
+    public GameObject directionScore;
+    public TextMeshProUGUI directionText;
+    public TextMeshProUGUI scoreText;
 
     // Start is called before the first frame update
     void Start()
     {
         Forward();
         resetCount = 0;
-        turtorialBool.SetText("true");
+        learnForward.SetActive(true);
     }
 
     // Update is called once per frame
@@ -93,6 +96,7 @@ public class OarPath : MonoBehaviour
     // sets target values for rowing "forward"- ie the user moves the oar away from them first
     void Forward()
     {
+        directionText.SetText("Forward");
         for (int i = 0; i < phantomOars.Length - 1; i++)
         {
             phantomOars[i].GetComponent<PhantomOar>().nextOar = phantomOars[i+1].GetComponent<PhantomOar>();
@@ -106,6 +110,7 @@ public class OarPath : MonoBehaviour
     // sets target values for rowing "backward"- ie the user moves the oar toward them first
     void Backward()
     {
+        directionText.SetText("Backward");
         phantomOars[0].GetComponent<PhantomOar>().nextOar = phantomOars[phantomOars.Length - 1].GetComponent<PhantomOar>();
         for (int i = phantomOars.Length - 1; i > 0; i--)
         {
@@ -122,19 +127,26 @@ public class OarPath : MonoBehaviour
         // probably not the most elegant way but will work for experimenting
         if (resetCount == 6)
         {
+            learnForward.SetActive(false);
+            learnBackward.SetActive(true);
             Backward();
         } else if (resetCount == 11)
         {
+            learnBackward.SetActive(false);
+            forwardTime.SetActive(true);
+            directionScore.SetActive(true);
             Forward();
-            score = 0;
+            ResetScore();
         } else if (resetCount == 16)
         {
+            forwardTime.SetActive(false);
+            backwardTime.SetActive(true);
             Backward();
-            score = 0;
+            ResetScore();
         } else if (resetCount > 20) 
         { 
+            backwardTime.SetActive(false);
             tutorial = false;
-            turtorialBool.SetText("false");
             // indicate that the game is starting with ui
             ResetGame();
         }
@@ -143,35 +155,38 @@ public class OarPath : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
-        scoreBoard.SetText(score.ToString());
+        scoreText.SetText(score.ToString());
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+        scoreText.SetText(score.ToString());
     }
 
     void Game()
     {
+        gameText.SetActive(true);
         if (round == 0)
         {
-            score = 0;
+            ResetScore();
         }
         else if (round == 10)
         {
             EndGame();
-            gameOver.SetText("Game Over!");
             oarPath.SetActive(false);
         }
 
         int random = Random.Range(0,2);
         if (random == 0)
         {
-            direction.SetText("forward");
             Forward();
         }
         else
         {
-            direction.SetText("backward");
             Backward();
         }
         round++;
-        roundNumber.SetText(round.ToString());
     }
 
     void EndGame()
@@ -181,7 +196,7 @@ public class OarPath : MonoBehaviour
 
     public void ResetGame()
     {
-        score = 0;
+        ResetScore();
         round = 0;
         Game();
     }
