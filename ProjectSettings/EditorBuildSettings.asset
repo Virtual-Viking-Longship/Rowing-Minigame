@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Rig-UI.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Static-Lighting.unity
     guid: 027b6aa0c6c4e4784b897faad3f467e0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dynamic.unity
     guid: 698bdee14db7a43de9b9c88deec23a9c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Experimenting/Experimenting.unity
     guid: 7f98fb848c08b45f1a92fe75f23e176d
   m_configObjects:
