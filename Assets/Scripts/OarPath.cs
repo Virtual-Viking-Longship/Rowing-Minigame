@@ -7,8 +7,11 @@ public class OarPath : MonoBehaviour
 {
     public GameObject oarPath;
     public GameObject[] phantomOars;
+    public PhantomOar[] phantomOarComponents;
 
     int resetCount;
+    public delegate void DestroyOars();
+    public static event DestroyOars OnOarsDestroyed;
     public delegate void ResetOars();
     public static event ResetOars OnResetOars;
     public delegate void NextRound();
@@ -43,6 +46,7 @@ public class OarPath : MonoBehaviour
     void OnEnable()
     {
         PhantomOar.OnOarHit += CheckOars;
+        OnOarsDestroyed += ActivateOars;
         OnResetOars += Sequence;
         OnNextRound += Game;
     }
@@ -50,6 +54,7 @@ public class OarPath : MonoBehaviour
     void OnDisable()
     {
         PhantomOar.OnOarHit -= CheckOars;
+        OnOarsDestroyed -= ActivateOars;
         OnResetOars -= Sequence;
         OnNextRound -= Game;
     }
@@ -69,7 +74,8 @@ public class OarPath : MonoBehaviour
         }
         if (count == 0)
         {
-            Invoke("ActivateOars", 0.2f);
+            //Invoke("ActivateOars", 0.2f);
+            OnOarsDestroyed();
         }
     }
 
@@ -78,9 +84,12 @@ public class OarPath : MonoBehaviour
         foreach (GameObject oar in phantomOars)
         {
             oar.SetActive(true);
-            oar.GetComponent<PhantomOar>().prevOarActive = true;
         }
-        phantomOars[0].GetComponent<PhantomOar>().prevOarActive = false;
+        foreach (PhantomOar oar in phantomOarComponents)
+        {
+            oar.prevOarActive = true;
+        }
+        phantomOarComponents[0].prevOarActive = false;
         resetCount++;
         if (tutorial)
         {
