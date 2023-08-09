@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2053385996549918003}
   - component: {fileID: 2053385996549918007}
   - component: {fileID: 2053385996549918004}
-  - component: {fileID: 2053385996549918005}
   - component: {fileID: 2053385996549918002}
   - component: {fileID: 4289280643246933183}
+  - component: {fileID: 6372483081021947285}
   m_Layer: 0
   m_Name: Phantom Oar
   m_TagString: Untagged
@@ -86,20 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2053385996549918005
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053385996549918000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 9039186615077802020, guid: 46ea0814da8eb4d69841c8c69f3243fd, type: 3}
 --- !u!54 &2053385996549918002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,3 +120,17 @@ MonoBehaviour:
   prevOarActive: 0
   firstOar: 0
   oarPath: {fileID: 0}
+--- !u!136 &6372483081021947285
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053385996549918000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.02
+  m_Height: 0.14697196
+  m_Direction: 2
+  m_Center: {x: -0.000000007650563, y: -0.0000000051003735, z: 0.061684333}
