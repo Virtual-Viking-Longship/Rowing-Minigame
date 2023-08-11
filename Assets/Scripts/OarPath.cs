@@ -141,27 +141,15 @@ public class OarPath : MonoBehaviour
     void Sequence()
     {
         // probably not the most elegant way but will work for experimenting
-        if (resetCount == 6)
+        if (resetCount == 3)
         {
             learnForward.SetActive(false);
-            learnBackward.SetActive(true);
-            Backward();
-        } else if (resetCount == 11)
-        {
-            learnBackward.SetActive(false);
             forwardTime.SetActive(true);
             directionScore.SetActive(true);
-            Forward();
-            ResetScore();
-        } else if (resetCount == 16)
+        } else if (resetCount == 6)
         {
             forwardTime.SetActive(false);
-            backwardTime.SetActive(true);
-            Backward();
             ResetScore();
-        } else if (resetCount > 20) 
-        { 
-            backwardTime.SetActive(false);
             tutorial = false;
             // indicate that the game is starting with ui
             ResetGame();
@@ -189,21 +177,21 @@ public class OarPath : MonoBehaviour
         {
             ResetScore();
         }
-        else if (round == 10)
+        else if (round == 5)
         {
             EndGame();
             oarPath.SetActive(false);
         }
 
-        int random = Random.Range(0,2);
-        if (random == 0)
-        {
+        //int random = Random.Range(0,2);
+        //if (random == 0)
+        //{
             Forward();
-        }
-        else
-        {
-            Backward();
-        }
+        //}
+        //else
+        //{
+        //    Backward();
+        //}
         round++;
     }
 
