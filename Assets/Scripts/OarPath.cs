@@ -7,6 +7,7 @@ public class OarPath : MonoBehaviour
 {
     public GameObject oarPath;
     public GameObject[] phantomOars;
+    public PhantomOar[] phantomOarComponents;
 
     int resetCount;
     public delegate void ResetOars();
@@ -75,12 +76,23 @@ public class OarPath : MonoBehaviour
 
     void ActivateOars()
     {
-        foreach (GameObject oar in phantomOars)
+        for (int i = 0; i < phantomOars.Length; i++)
         {
-            oar.SetActive(true);
-            oar.GetComponent<PhantomOar>().prevOarActive = true;
+            phantomOars[i].SetActive(true);
         }
-        phantomOars[0].GetComponent<PhantomOar>().prevOarActive = false;
+        //foreach (GameObject oar in phantomOars)
+        //{
+        //    oar.SetActive(true);
+        //}
+        for (int i = 0; i < phantomOarComponents.Length; i++)
+        {
+            phantomOarComponents[i].prevOarActive = true;
+        }
+        //foreach (PhantomOar oar in phantomOarComponents)
+        //{
+        //    oar.prevOarActive = true;
+        //}
+        phantomOarComponents[0].prevOarActive = false;
         resetCount++;
         if (tutorial)
         {
