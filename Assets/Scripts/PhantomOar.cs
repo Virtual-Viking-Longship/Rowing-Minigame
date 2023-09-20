@@ -38,7 +38,7 @@ public class PhantomOar : MonoBehaviour
         {
             SetInactive();
             oarPath.AddScore(5);
-            if (time < 10 && time > 3 && !firstOar) 
+            if (time < 1 && time > 0 && !firstOar) 
             {
                 oarPath.AddScore(10);
             } 

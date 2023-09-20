@@ -5,10 +5,12 @@ using TMPro;
 
 public class OarPath : MonoBehaviour
 {
+    // helps the oar path locate itself (to disable the game object) and the oars
     public GameObject oarPath;
     public GameObject[] phantomOars;
     public PhantomOar[] phantomOarComponents;
 
+    // variables and events that keep track of what point in the experience the user has reached
     int resetCount;
     public delegate void ResetOars();
     public static event ResetOars OnResetOars;
@@ -18,6 +20,7 @@ public class OarPath : MonoBehaviour
     bool tutorial = true;
     int round;
 
+    // ui elements to control
     public GameObject learnForward;
     public GameObject learnBackward;
     public GameObject forwardTime;
@@ -74,26 +77,21 @@ public class OarPath : MonoBehaviour
         }
     }
 
+    // invoked by CheckOars, will make all oars active again
+    // and reset the values of prevOarActive for all of them
     void ActivateOars()
     {
         for (int i = 0; i < phantomOars.Length; i++)
         {
             phantomOars[i].SetActive(true);
         }
-        //foreach (GameObject oar in phantomOars)
-        //{
-        //    oar.SetActive(true);
-        //}
         for (int i = 0; i < phantomOarComponents.Length; i++)
         {
             phantomOarComponents[i].prevOarActive = true;
         }
-        //foreach (PhantomOar oar in phantomOarComponents)
-        //{
-        //    oar.prevOarActive = true;
-        //}
         phantomOarComponents[0].prevOarActive = false;
         resetCount++;
+        // figures out if the user is playing the game or learning how to row
         if (tutorial)
         {
             if (OnResetOars != null)
@@ -143,33 +141,22 @@ public class OarPath : MonoBehaviour
     void Sequence()
     {
         // probably not the most elegant way but will work for experimenting
-        if (resetCount == 6)
+        if (resetCount == 3)
         {
             learnForward.SetActive(false);
-            learnBackward.SetActive(true);
-            Backward();
-        } else if (resetCount == 11)
-        {
-            learnBackward.SetActive(false);
             forwardTime.SetActive(true);
             directionScore.SetActive(true);
-            Forward();
-            ResetScore();
-        } else if (resetCount == 16)
+        } else if (resetCount == 6)
         {
             forwardTime.SetActive(false);
-            backwardTime.SetActive(true);
-            Backward();
             ResetScore();
-        } else if (resetCount > 20) 
-        { 
-            backwardTime.SetActive(false);
             tutorial = false;
             // indicate that the game is starting with ui
             ResetGame();
         }
     }
 
+    // the script on the oars uses this method to add points based on the timer
     public void AddScore(int points)
     {
         score += points;
@@ -182,6 +169,7 @@ public class OarPath : MonoBehaviour
         scoreText.SetText(score.ToString());
     }
 
+    // this runs the game, currently 10 rounds of randomized directions, will be changed later
     void Game()
     {
         gameText.SetActive(true);
@@ -189,21 +177,21 @@ public class OarPath : MonoBehaviour
         {
             ResetScore();
         }
-        else if (round == 10)
+        else if (round == 5)
         {
             EndGame();
             oarPath.SetActive(false);
         }
 
-        int random = Random.Range(0,2);
-        if (random == 0)
-        {
+        //int random = Random.Range(0,2);
+        //if (random == 0)
+        //{
             Forward();
-        }
-        else
-        {
-            Backward();
-        }
+        //}
+        //else
+        //{
+        //    Backward();
+        //}
         round++;
     }
 
@@ -212,6 +200,7 @@ public class OarPath : MonoBehaviour
         // take score and initials and save them if in top 10, display leaderboard
     }
 
+    // resets the score and starts the game again
     public void ResetGame()
     {
         ResetScore();
