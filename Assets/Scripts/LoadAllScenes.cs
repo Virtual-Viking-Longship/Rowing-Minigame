@@ -19,4 +19,12 @@ public class LoadAllScenes : MonoBehaviour
     {
         
     }
+
+    public void Reload()
+    {
+        SceneManager.UnloadSceneAsync(1);
+        SceneManager.UnloadSceneAsync(0);
+        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+    }
 }
