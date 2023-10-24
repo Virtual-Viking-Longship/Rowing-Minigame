@@ -8,8 +8,8 @@ public class ActivateGame : MonoBehaviour
 {
     private bool start = false;
 
-    public HandGrabInteractor leftGrab;
-    public HandGrabInteractor rightGrab;
+    private HandGrabInteractor leftGrab;
+    private HandGrabInteractor rightGrab;
     public GameObject oarPath;
     // Start is called before the first frame update
     void Start()
