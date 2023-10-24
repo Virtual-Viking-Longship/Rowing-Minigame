@@ -996,6 +996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e718138e3064a659d95aaf4a6111f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oarPath: {fileID: 0}
 --- !u!1 &380304401
 GameObject:
   m_ObjectHideFlags: 0
@@ -3289,6 +3290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e50ff7596514380aea0dfdb5bf14a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNames:
+  - Static-Lighting
 --- !u!114 &1491143568
 MonoBehaviour:
   m_ObjectHideFlags: 0
