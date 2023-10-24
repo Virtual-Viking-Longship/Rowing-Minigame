@@ -8,8 +8,8 @@ public class ActivateGame : MonoBehaviour
 {
     private bool start = false;
 
-    private HandGrabInteractor leftGrab;
-    private HandGrabInteractor rightGrab;
+    //private HandGrabInteractor leftGrab;
+    //private HandGrabInteractor rightGrab;
     public GameObject oarPath;
     // Start is called before the first frame update
     void Start()
@@ -20,10 +20,10 @@ public class ActivateGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(InteractorState.Select == leftGrab.State & start) 
-        {
-            oarPath.SetActive(true);
-            start = false;
-        }
+        //if(InteractorState.Select == leftGrab.State & start) 
+        //{
+        //    oarPath.SetActive(true);
+        //    start = false;
+        //}
     }
 }
