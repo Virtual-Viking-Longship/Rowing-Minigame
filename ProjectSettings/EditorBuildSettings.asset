@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/No Windows/No-Windows.unity
     guid: b9979fa9a8dc4423fad2d1b925dea145
+  - enabled: 1
+    path: Assets/Scenes/Video_CurveCanvas.unity
+    guid: 491087ea0abbb41f2b93fd362463caf5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 083a2c3eddbb244d18d13837ddbdd7cd, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 69e333aa6571b4cea87a62fb2de29895, type: 2}
