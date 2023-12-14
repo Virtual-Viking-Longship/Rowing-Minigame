@@ -46,35 +46,14 @@ public class OarPathTimed : MonoBehaviour
 
     void OnEnable()
     {
-        PhantomOar.OnOarHit += CheckOars;
         OnResetOars += Sequence;
         OnNextRound += Game;
     }
 
     void OnDisable()
     {
-        PhantomOar.OnOarHit -= CheckOars;
         OnResetOars -= Sequence;
         OnNextRound -= Game;
-    }
-
-    // checks to see if any oars are active, if not, activates all of them
-    // has a short delay so user can see the last oar disappear
-    // called by hitting an oar
-    void CheckOars()
-    {
-        int count = 0;
-        foreach (GameObject oar in phantomOars)
-        {
-            if (oar.activeInHierarchy == true)
-            {
-                count++;
-            }
-        }
-        if (count == 0)
-        {
-            Invoke("ActivateOars", 0.2f);
-        }
     }
 
     // invoked by CheckOars, will make all oars active again
@@ -97,6 +76,7 @@ public class OarPathTimed : MonoBehaviour
             if (OnResetOars != null)
             {
                 OnResetOars();
+                // goes to next round of tutorial
             }
         } 
         else
@@ -104,39 +84,11 @@ public class OarPathTimed : MonoBehaviour
             if (OnNextRound != null)
             {
                 OnNextRound();
+                // goes to next round of game
             }
         }
         
     }
-
-    // sets target values for rowing forward- ie the user moves the oar toward from them first
-    void Forward()
-    {
-        directionText.SetText("Forward");
-        for (int i = 0; i < phantomOars.Length - 1; i++)
-        {
-            phantomOars[i].GetComponent<PhantomOar>().nextOar = phantomOars[i+1].GetComponent<PhantomOar>();
-        }
-        for (int i = 1; i < phantomOars.Length; i++)
-        {
-            phantomOars[i].GetComponent<PhantomOar>().prevOarActive = true;
-        }
-    }
-
-    // sets target values for rowing backward- ie the user moves the oar away from them first
-    // void Backward()
-    // {
-    //     directionText.SetText("Backward");
-    //     phantomOars[0].GetComponent<PhantomOar>().nextOar = phantomOars[phantomOars.Length - 1].GetComponent<PhantomOar>();
-    //     for (int i = phantomOars.Length - 1; i > 0; i--)
-    //     {
-    //         phantomOars[i].GetComponent<PhantomOar>().nextOar = phantomOars[i-1].GetComponent<PhantomOar>();
-    //     }
-    //     for (int i = 1; i < phantomOars.Length; i++)
-    //     {
-    //         phantomOars[i].GetComponent<PhantomOar>().prevOarActive = true;
-    //     }
-    // }
 
     void Sequence()
     {
@@ -169,7 +121,7 @@ public class OarPathTimed : MonoBehaviour
         scoreText.SetText(score.ToString());
     }
 
-    // this runs the game, currently 10 rounds of randomized directions, will be changed later
+    // this runs the game
     void Game()
     {
         gameText.SetActive(true);
@@ -182,16 +134,7 @@ public class OarPathTimed : MonoBehaviour
             EndGame();
             oarPath.SetActive(false);
         }
-
-        //int random = Random.Range(0,2);
-        //if (random == 0)
-        //{
-            Forward();
-        //}
-        //else
-        //{
-        //    Backward();
-        //}
+        Forward();
         round++;
     }
 
