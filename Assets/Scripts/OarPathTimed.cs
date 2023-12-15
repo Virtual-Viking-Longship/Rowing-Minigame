@@ -8,10 +8,9 @@ public class OarPathTimed : MonoBehaviour
     // helps the oar path locate itself (to disable the game object) and the oars
     public GameObject oarPath;
     public GameObject[] phantomOars;
-    public PhantomOar[] phantomOarComponents;
+    public PhantomOarTimed[] phantomOarComponents;
 
     // variables and events that keep track of what point in the experience the user has reached
-    int resetCount;
     public delegate void ResetOars();
     public static event ResetOars OnResetOars;
     public delegate void NextRound();
@@ -33,8 +32,6 @@ public class OarPathTimed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Forward();
-        resetCount = 0;
         learnForward.SetActive(true);
     }
 
@@ -46,66 +43,36 @@ public class OarPathTimed : MonoBehaviour
 
     void OnEnable()
     {
-        OnResetOars += Sequence;
-        OnNextRound += Game;
+
     }
 
     void OnDisable()
     {
-        OnResetOars -= Sequence;
-        OnNextRound -= Game;
+
     }
 
-    // invoked by CheckOars, will make all oars active again
-    // and reset the values of prevOarActive for all of them
-    void ActivateOars()
-    {
-        for (int i = 0; i < phantomOars.Length; i++)
-        {
-            phantomOars[i].SetActive(true);
-        }
-        for (int i = 0; i < phantomOarComponents.Length; i++)
-        {
-            phantomOarComponents[i].prevOarActive = true;
-        }
-        phantomOarComponents[0].prevOarActive = false;
-        resetCount++;
-        // figures out if the user is playing the game or learning how to row
-        if (tutorial)
-        {
-            if (OnResetOars != null)
-            {
-                OnResetOars();
-                // goes to next round of tutorial
-            }
-        } 
-        else
-        {
-            if (OnNextRound != null)
-            {
-                OnNextRound();
-                // goes to next round of game
-            }
-        }
-        
-    }
 
     void Sequence()
     {
+        learnForward.SetActive(false);
+        // forwardTime.SetActive(true);
+        // directionScore.SetActive(true);
         // probably not the most elegant way but will work for experimenting
-        if (resetCount == 3)
+        for (int i = 0; i < 5; i++)
         {
-            learnForward.SetActive(false);
-            forwardTime.SetActive(true);
-            directionScore.SetActive(true);
-        } else if (resetCount == 6)
-        {
+            foreach(PhantomOarTimed oar in phantomOarComponents)
+            {
+                oar.Appear();
+                oar.Invoke("Hit", 1);
+            }
+        }
+        
+
             forwardTime.SetActive(false);
             ResetScore();
             tutorial = false;
             // indicate that the game is starting with ui
             ResetGame();
-        }
     }
 
     // the script on the oars uses this method to add points based on the timer
@@ -134,7 +101,6 @@ public class OarPathTimed : MonoBehaviour
             EndGame();
             oarPath.SetActive(false);
         }
-        Forward();
         round++;
     }
 

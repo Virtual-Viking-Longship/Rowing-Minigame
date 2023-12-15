@@ -27,5 +27,16 @@ public class PhantomOarTimed : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         oarPath.AddScore(10);
+        Hit();
+    }
+
+    public void Hit()
+    {
+        space.SetActive(false);
+    }
+
+    public void Appear()
+    {
+        space.SetActive(true);
     }
 }
