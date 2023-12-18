@@ -18,6 +18,7 @@ public class OarPathTimed : MonoBehaviour
     int score = 0;
     bool tutorial = true;
     int round;
+    float time = 0f;
 
     // ui elements to control
     public GameObject learnForward;
@@ -43,7 +44,7 @@ public class OarPathTimed : MonoBehaviour
 
     void OnEnable()
     {
-
+        Sequence();
     }
 
     void OnDisable()
@@ -55,6 +56,7 @@ public class OarPathTimed : MonoBehaviour
     void Sequence()
     {
         learnForward.SetActive(false);
+        time = 0f;
         // forwardTime.SetActive(true);
         // directionScore.SetActive(true);
         // probably not the most elegant way but will work for experimenting
@@ -63,7 +65,12 @@ public class OarPathTimed : MonoBehaviour
             foreach(PhantomOarTimed oar in phantomOarComponents)
             {
                 oar.Appear();
-                oar.Invoke("Hit", 1);
+                while (time < 1)
+                {
+                    time += Time.deltaTime;
+                }
+                oar.Hit();
+                time = 0f;
             }
         }
         
