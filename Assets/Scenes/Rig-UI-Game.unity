@@ -275,11 +275,11 @@ PrefabInstance:
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: nextOar
       value: 
-      objectReference: {fileID: 1422198976}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: oarPath
       value: 
-      objectReference: {fileID: 964766662}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -288,24 +288,14 @@ PrefabInstance:
       propertyPath: grabOarCollider
       value: 
       objectReference: {fileID: 1419956583}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
 --- !u!4 &64407398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2053385996549918003, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
   m_PrefabInstance: {fileID: 64407397}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &64407399 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
-  m_PrefabInstance: {fileID: 64407397}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 940912674}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b46b8498fd17425b9054f1d19b796d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &93117755
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,12 +517,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Getting the motion right is important, but so is timing.
 
-    You want
-    to line your oar up with the next outline about less than a second after the
-    last outline.
+    One full
+    stroke should take about X seconds.
 
-    You will get 5 points for lining the oar up, and up to 10
-    extra points if you do so within one second. Do this three times.'
+    You will score 10 points for each outline
+    you hit in time. Do this three times.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1440,7 +1429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Now you're ready to row. Row forward 5 times and try to get as many points
+  m_text: Now you're ready to row. Row forward 10 times and try to get as many points
     as possible.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2094,11 +2083,11 @@ PrefabInstance:
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: nextOar
       value: 
-      objectReference: {fileID: 1776310463}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: oarPath
       value: 
-      objectReference: {fileID: 964766662}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: firstOar
       value: 0
@@ -2111,24 +2100,14 @@ PrefabInstance:
       propertyPath: grabOarCollider
       value: 
       objectReference: {fileID: 1419956583}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
 --- !u!4 &765987967 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2053385996549918003, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
   m_PrefabInstance: {fileID: 765987966}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &765987968 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
-  m_PrefabInstance: {fileID: 765987966}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506222780}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b46b8498fd17425b9054f1d19b796d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &770981954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,10 +2452,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: {fileID: 940912674}
   grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 1422198976}
+  nextOar: {fileID: 1422198982}
   prevOarActive: 0
   firstOar: 0
-  oarPath: {fileID: 964766662}
+  oarPath: {fileID: 964766663}
 --- !u!1 &964766660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,7 +2465,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 964766661}
-  - component: {fileID: 964766662}
   - component: {fileID: 964766663}
   m_Layer: 0
   m_Name: Oar Path
@@ -2516,41 +2494,6 @@ Transform:
   m_Father: {fileID: 317560750}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &964766662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964766660}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b0fe1798ba494b7c8d5ccce5fd07554, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oarPath: {fileID: 964766660}
-  phantomOars:
-  - {fileID: 1422198977}
-  - {fileID: 198390929}
-  - {fileID: 1506222780}
-  - {fileID: 1776310464}
-  - {fileID: 1552172096}
-  - {fileID: 940912674}
-  phantomOarComponents:
-  - {fileID: 1422198976}
-  - {fileID: 2053385996376848802}
-  - {fileID: 765987968}
-  - {fileID: 1776310463}
-  - {fileID: 1552172095}
-  - {fileID: 64407399}
-  learnForward: {fileID: 1384507780}
-  learnBackward: {fileID: 770981954}
-  forwardTime: {fileID: 1491624587}
-  backwardTime: {fileID: 730827806}
-  gameText: {fileID: 1095930434}
-  directionScore: {fileID: 1554182110}
-  directionText: {fileID: 2113638920}
-  scoreText: {fileID: 2016684292}
 --- !u!114 &964766663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2579,9 +2522,7 @@ MonoBehaviour:
   - {fileID: 1552172101}
   - {fileID: 940912679}
   learnForward: {fileID: 1384507780}
-  learnBackward: {fileID: 770981954}
   forwardTime: {fileID: 1491624587}
-  backwardTime: {fileID: 730827806}
   gameText: {fileID: 1095930434}
   directionScore: {fileID: 1554182110}
   directionText: {fileID: 2113638920}
@@ -2799,16 +2740,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Are you ready to learn how to row?
+  m_text: 'Try rowing forward.
 
-    Grab the oar to begin!
-
-
-    Try
-    rowing forward.
-
-    Use a circular motion to line your oar up with the outlines
-    starting with the green one and pulling towards yourself. Do this three times.'
+    Use a circular motion to line your oar up with
+    the outlines as they appear and disappear. Do this three times.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3210,11 +3145,11 @@ PrefabInstance:
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: nextOar
       value: 
-      objectReference: {fileID: 2053385996376848802}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: oarPath
       value: 
-      objectReference: {fileID: 964766662}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: firstOar
       value: 1
@@ -3227,24 +3162,14 @@ PrefabInstance:
       propertyPath: grabOarCollider
       value: 
       objectReference: {fileID: 1419956583}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
 --- !u!4 &1422198975 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2053385996549918003, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
   m_PrefabInstance: {fileID: 1422198974}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1422198976 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
-  m_PrefabInstance: {fileID: 1422198974}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422198977}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b46b8498fd17425b9054f1d19b796d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1422198977 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2053385996549918000, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
@@ -3264,10 +3189,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: {fileID: 1422198977}
   grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 2053385996376848802}
+  nextOar: {fileID: 2053385996376848807}
   prevOarActive: 0
   firstOar: 1
-  oarPath: {fileID: 964766662}
+  oarPath: {fileID: 964766663}
 --- !u!1001 &1472414076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3450,10 +3375,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: {fileID: 1506222780}
   grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 1776310463}
+  nextOar: {fileID: 1506222785}
   prevOarActive: 0
   firstOar: 0
-  oarPath: {fileID: 964766662}
+  oarPath: {fileID: 964766663}
 --- !u!1001 &1552172093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3516,11 +3441,11 @@ PrefabInstance:
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: nextOar
       value: 
-      objectReference: {fileID: 64407399}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: oarPath
       value: 
-      objectReference: {fileID: 964766662}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3529,24 +3454,14 @@ PrefabInstance:
       propertyPath: grabOarCollider
       value: 
       objectReference: {fileID: 1419956583}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
 --- !u!4 &1552172094 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2053385996549918003, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
   m_PrefabInstance: {fileID: 1552172093}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1552172095 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
-  m_PrefabInstance: {fileID: 1552172093}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1552172096}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b46b8498fd17425b9054f1d19b796d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1552172096 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2053385996549918000, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
@@ -3566,10 +3481,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: {fileID: 1552172096}
   grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 64407399}
+  nextOar: {fileID: 940912679}
   prevOarActive: 0
   firstOar: 0
-  oarPath: {fileID: 964766662}
+  oarPath: {fileID: 964766663}
 --- !u!1 &1554182110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4123,11 +4038,11 @@ PrefabInstance:
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: nextOar
       value: 
-      objectReference: {fileID: 1552172095}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: oarPath
       value: 
-      objectReference: {fileID: 964766662}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -4136,24 +4051,14 @@ PrefabInstance:
       propertyPath: grabOarCollider
       value: 
       objectReference: {fileID: 1419956583}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
 --- !u!4 &1776310462 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2053385996549918003, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
   m_PrefabInstance: {fileID: 1776310461}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1776310463 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
-  m_PrefabInstance: {fileID: 1776310461}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776310464}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b46b8498fd17425b9054f1d19b796d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1776310464 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2053385996549918000, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
@@ -4173,10 +4078,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: {fileID: 1776310464}
   grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 1552172095}
+  nextOar: {fileID: 1552172101}
   prevOarActive: 0
   firstOar: 0
-  oarPath: {fileID: 964766662}
+  oarPath: {fileID: 964766663}
 --- !u!1 &1838698147
 GameObject:
   m_ObjectHideFlags: 0
@@ -5358,7 +5263,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Row Backward
+  m_text: Row Forward
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5749,11 +5654,11 @@ PrefabInstance:
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: nextOar
       value: 
-      objectReference: {fileID: 765987968}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: oarPath
       value: 
-      objectReference: {fileID: 964766662}
+      objectReference: {fileID: 0}
     - target: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
       propertyPath: firstOar
       value: 0
@@ -5766,19 +5671,9 @@ PrefabInstance:
       propertyPath: grabOarCollider
       value: 
       objectReference: {fileID: 1419956583}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
---- !u!114 &2053385996376848802 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4289280643246933183, guid: 9b5ac9f2c591847988e8f958ec226953, type: 3}
-  m_PrefabInstance: {fileID: 2053385996376848801}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198390929}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b46b8498fd17425b9054f1d19b796d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2053385996376848807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5793,10 +5688,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: {fileID: 198390929}
   grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 765987968}
+  nextOar: {fileID: 1506222785}
   prevOarActive: 0
   firstOar: 0
-  oarPath: {fileID: 964766662}
+  oarPath: {fileID: 964766663}
 --- !u!1 &3126449931756207013
 GameObject:
   m_ObjectHideFlags: 0

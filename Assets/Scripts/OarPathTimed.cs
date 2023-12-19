@@ -10,20 +10,12 @@ public class OarPathTimed : MonoBehaviour
     public GameObject[] phantomOars;
     public PhantomOarTimed[] phantomOarComponents;
 
-    // variables and events that keep track of what point in the experience the user has reached
-    public delegate void ResetOars();
-    public static event ResetOars OnResetOars;
-    public delegate void NextRound();
-    public static event NextRound OnNextRound;
+    // score variable
     int score = 0;
-    bool tutorial = true;
-    int round;
 
     // ui elements to control
     public GameObject learnForward;
-    public GameObject learnBackward;
     public GameObject forwardTime;
-    public GameObject backwardTime;
     public GameObject gameText;
     public GameObject directionScore;
     public TextMeshProUGUI directionText;
@@ -51,51 +43,50 @@ public class OarPathTimed : MonoBehaviour
 
     }
 
-
     IEnumerator Sequence()
     {
         learnForward.SetActive(true);
-        yield return new WaitForSeconds(10);
-        // forwardTime.SetActive(true);
-        // directionScore.SetActive(true);
-        // probably not the most elegant way but will work for experimenting
+        yield return new WaitForSeconds(5);
         for (int i = 0; i < 3; i++)
         {
             foreach(PhantomOarTimed oar in phantomOarComponents)
             {
                 oar.Appear();
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(0.5f);
                 oar.Hit();
             }
         }
+        ResetScore();
         learnForward.SetActive(false);
         forwardTime.SetActive(true);
-        ResetScore();
-        yield return new WaitForSeconds(10);
+        directionScore.SetActive(true);
+        yield return new WaitForSeconds(5);
         for (int i = 0; i < 3; i++)
         {
             foreach(PhantomOarTimed oar in phantomOarComponents)
             {
                 oar.Appear();
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(0.5f);
                 oar.Hit();
             }
         }
+        yield return new WaitForSeconds(5);
+        ResetScore();
         forwardTime.SetActive(false);
         gameText.SetActive(true);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         for (int i = 0; i < 10; i++)
         {
             foreach(PhantomOarTimed oar in phantomOarComponents)
             {
                 oar.Appear();
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(0.5f);
                 oar.Hit();
             }
         }
     }
 
-    // the script on the oars uses this method to add points based on the timer
+    // the script on the oars uses this method to add points
     public void AddScore(int points)
     {
         score += points;
@@ -107,33 +98,4 @@ public class OarPathTimed : MonoBehaviour
         score = 0;
         scoreText.SetText(score.ToString());
     }
-
-    // this runs the game
-    // void Game()
-    // {
-    //     gameText.SetActive(true);
-    //     if (round == 0)
-    //     {
-    //         ResetScore();
-    //     }
-    //     else if (round == 5)
-    //     {
-    //         EndGame();
-    //         oarPath.SetActive(false);
-    //     }
-    //     round++;
-    // }
-
-    // void EndGame()
-    // {
-    //     // take score and initials and save them if in top 10, display leaderboard
-    // }
-
-    // // resets the score and starts the game again
-    // public void ResetGame()
-    // {
-    //     ResetScore();
-    //     round = 0;
-    //     Game();
-    // }
 }

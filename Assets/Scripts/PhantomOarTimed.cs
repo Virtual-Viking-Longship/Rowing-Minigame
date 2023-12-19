@@ -7,10 +7,10 @@ public class PhantomOarTimed : MonoBehaviour
 {
     public GameObject space;
     public Collider grabOarCollider;
-    public PhantomOar nextOar;
+    public PhantomOarTimed nextOar;
     public bool prevOarActive;
     public bool firstOar;
-    public OarPath oarPath;
+    public OarPathTimed oarPath;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +26,11 @@ public class PhantomOarTimed : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        oarPath.AddScore(10);
-        Hit();
+        if (other == grabOarCollider) 
+        {
+            Hit();
+            oarPath.AddScore(10);
+        }
     }
 
     public void Hit()

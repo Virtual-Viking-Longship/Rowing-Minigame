@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2053385996549918007}
   - component: {fileID: 2053385996549918004}
   - component: {fileID: 2053385996549918002}
-  - component: {fileID: 4289280643246933183}
   - component: {fileID: 6372483081021947285}
   m_Layer: 0
   m_Name: Phantom Oar
@@ -102,24 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &4289280643246933183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053385996549918000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b46b8498fd17425b9054f1d19b796d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  space: {fileID: 2053385996549918000}
-  grabOarCollider: {fileID: 0}
-  nextOar: {fileID: 0}
-  prevOarActive: 0
-  firstOar: 0
-  oarPath: {fileID: 0}
 --- !u!136 &6372483081021947285
 CapsuleCollider:
   m_ObjectHideFlags: 0
