@@ -53,8 +53,13 @@ public class OarPathTimed : MonoBehaviour
             {
                 oar.Appear();
                 yield return new WaitForSeconds(0.5f);
+            }
+            yield return new WaitForSeconds(3);
+            foreach(PhantomOarTimed oar in phantomOarComponents)
+            {
                 oar.Hit();
             }
+            yield return new WaitForSeconds(1);
         }
         ResetScore();
         learnForward.SetActive(false);

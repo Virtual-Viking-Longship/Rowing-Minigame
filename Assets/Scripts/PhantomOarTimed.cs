@@ -26,6 +26,8 @@ public class PhantomOarTimed : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        // with new training round should also check if the previous oar is active, 
+        // otherwise could do wrong order
         if (other == grabOarCollider) 
         {
             Hit();
