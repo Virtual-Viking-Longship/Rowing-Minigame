@@ -18,8 +18,8 @@ public class OarPathTimed : MonoBehaviour
     public GameObject forwardTime;
     public GameObject gameText;
     public GameObject directionScore;
-    public TextMeshProUGUI directionText;
     public TextMeshProUGUI scoreText;
+    public GameObject end;
 
     // Start is called before the first frame update
     void Start()
@@ -89,6 +89,8 @@ public class OarPathTimed : MonoBehaviour
                 oar.Hit();
             }
         }
+        gameText.SetActive(false);
+        end.SetActive(true);
     }
 
     // the script on the oars uses this method to add points
