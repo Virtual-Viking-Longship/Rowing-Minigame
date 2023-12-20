@@ -26,9 +26,7 @@ public class PhantomOarTimed : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // with new training round should also check if the previous oar is active, 
-        // otherwise could do wrong order
-        if (other == grabOarCollider) 
+        if (other == grabOarCollider && !prevOarActive) 
         {
             Hit();
             oarPath.AddScore(10);
@@ -38,10 +36,12 @@ public class PhantomOarTimed : MonoBehaviour
     public void Hit()
     {
         space.SetActive(false);
+        nextOar.prevOarActive = false;
     }
 
     public void Appear()
     {
         space.SetActive(true);
+        nextOar.prevOarActive = true;
     }
 }
