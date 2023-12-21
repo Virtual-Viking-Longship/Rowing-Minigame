@@ -1568,8 +1568,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Now you're ready to row. Row forward 10 times and try to get as many points
-    as possible.
+  m_text: Now you're ready to row. Row 10 times and try to get as many points as
+    possible.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2603,7 +2603,7 @@ MonoBehaviour:
   directionScore: {fileID: 1554182110}
   scoreText: {fileID: 2016684292}
   end: {fileID: 1754572311}
-  strokeTime: 3
+  time: 3
 --- !u!1001 &1006288991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2817,10 +2817,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Try rowing forward.
+  m_text: 'Try rowing.
 
-    Use a circular motion to line your oar up with
-    the outlines as they appear. Do this three times.'
+    Use a circular motion to line your oar up with the outlines
+    as they appear. Do this three times.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
