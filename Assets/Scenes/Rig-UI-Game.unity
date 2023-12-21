@@ -2531,6 +2531,7 @@ MonoBehaviour:
   prevOarActive: 0
   firstOar: 0
   oarPath: {fileID: 964766663}
+  stroke: 0
 --- !u!1 &964766660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2601,7 +2602,8 @@ MonoBehaviour:
   gameText: {fileID: 1095930434}
   directionScore: {fileID: 1554182110}
   scoreText: {fileID: 2016684292}
-  end: {fileID: 0}
+  end: {fileID: 1754572311}
+  strokeTime: 3
 --- !u!1001 &1006288991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3268,6 +3270,7 @@ MonoBehaviour:
   prevOarActive: 0
   firstOar: 1
   oarPath: {fileID: 964766663}
+  stroke: 1
 --- !u!1001 &1472414076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3454,6 +3457,7 @@ MonoBehaviour:
   prevOarActive: 0
   firstOar: 0
   oarPath: {fileID: 964766663}
+  stroke: 1
 --- !u!1001 &1552172093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3564,6 +3568,7 @@ MonoBehaviour:
   prevOarActive: 0
   firstOar: 0
   oarPath: {fileID: 964766663}
+  stroke: 0
 --- !u!1 &1554182110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4060,6 +4065,7 @@ MonoBehaviour:
   prevOarActive: 0
   firstOar: 0
   oarPath: {fileID: 964766663}
+  stroke: 0
 --- !u!1 &1838698147
 GameObject:
   m_ObjectHideFlags: 0
@@ -5532,6 +5538,7 @@ MonoBehaviour:
   prevOarActive: 0
   firstOar: 0
   oarPath: {fileID: 964766663}
+  stroke: 1
 --- !u!1 &3126449931756207013
 GameObject:
   m_ObjectHideFlags: 0

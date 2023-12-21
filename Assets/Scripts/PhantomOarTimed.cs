@@ -11,6 +11,7 @@ public class PhantomOarTimed : MonoBehaviour
     public bool prevOarActive;
     public bool firstOar;
     public OarPathTimed oarPath;
+    public bool stroke;
 
     // Start is called before the first frame update
     void Start()
