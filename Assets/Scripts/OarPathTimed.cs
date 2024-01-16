@@ -37,9 +37,13 @@ public class OarPathTimed : MonoBehaviour
         // this ui activation seems redundant but leaving for now until there is time to make sure 
         // removing it doesnt break anything
         learnForward.SetActive(true);
-        stroke = time / 3;
-        recovery = 2 * time / 3;
-        split = phantomOars.Length / 2;
+
+        // figure out how many oar targets there are
+        int oarCount = phantomOars.Length;
+        // replaced magic numbers- confirm function week 4
+        stroke = time / oarCount;
+        recovery = 2 * time / oarCount;
+        split = oarCount / 2;
         perStroke = stroke / split;
         perRecovery = recovery / split;
     }
