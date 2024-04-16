@@ -42,7 +42,7 @@ public class OarPathTimed : MonoBehaviour
         int oarCount = phantomOars.Length;
         // replaced magic numbers- confirm function week 4
         stroke = time / oarCount;
-        recovery = 2 * time / oarCount;
+        recovery = 2 * stroke;
         split = oarCount / 2;
         perStroke = stroke / split;
         perRecovery = recovery / split;
@@ -104,7 +104,7 @@ public class OarPathTimed : MonoBehaviour
                 oar.Hit();
             }
             // quick break between rounds
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
         }
         // reset the score and enable the proper UI elements for stage 2
         ResetScore();
