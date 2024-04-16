@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Phantom Oar Material 1
+  m_Name: Phantom Oar Material Green
   m_Shader: {fileID: 4800000, guid: 91b39fde404334ea5b93447607d11a7d, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
@@ -76,6 +76,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 1, g: 0.06603671, b: 0, a: 0.09803922}
+    - _Color: {r: 0, g: 1, b: 0.27745053, a: 0.09803922}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
