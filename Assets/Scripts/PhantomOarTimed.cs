@@ -10,7 +10,7 @@ public class PhantomOarTimed : MonoBehaviour
     public GameObject space;
     public Collider grabOarCollider;
     // might be able to make this private and initialize it in Start or OnEnable
-    public PhantomOarTimed nextOar;
+    private PhantomOarTimed nextOar;
     // probably should be private
     public bool prevOarActive;
     // does not appear to be referenced anywhere anymore, will try removing when there is time to fix
@@ -53,5 +53,9 @@ public class PhantomOarTimed : MonoBehaviour
     {
         space.SetActive(true);
         nextOar.prevOarActive = true;
+    }
+
+    public void AssignNextOar(PhantomOarTimed oar) {
+        nextOar = oar;
     }
 }
