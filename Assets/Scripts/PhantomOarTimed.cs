@@ -5,25 +5,19 @@ using TMPro;
 
 public class PhantomOarTimed : MonoBehaviour
 {
-    // want to rename this at some point when there is more time to troubleshoot the inevitable
-    // missed reference to change
-    public GameObject space;
-    public Collider grabOarCollider;
-    // might be able to make this private and initialize it in Start or OnEnable
+    // OarPathTimed uses methods to assign these
+    private Collider grabOarCollider;
     private PhantomOarTimed nextOar;
-    // probably should be private
-    public bool prevOarActive;
-    // does not appear to be referenced anywhere anymore, will try removing when there is time to fix
-    // things in case it breaks something
-    public bool firstOar;
-    // these should be assigned in the editor still
-    public OarPathTimed oarPath;
+    private bool prevOarActive;
+    private OarPathTimed oarPath;
+    // this one could be private if decide not to allow for uneven stroke/recovery
+    // currently OarPathTimed assumes they are even, but if decide to make it possible to do uneven
+    // then this will need to stay public
     public bool stroke;
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -45,17 +39,25 @@ public class PhantomOarTimed : MonoBehaviour
 
     public void Hit()
     {
-        space.SetActive(false);
+        gameObject.SetActive(false);
         nextOar.prevOarActive = false;
     }
 
     public void Appear()
     {
-        space.SetActive(true);
+        gameObject.SetActive(true);
         nextOar.prevOarActive = true;
     }
 
     public void AssignNextOar(PhantomOarTimed oar) {
         nextOar = oar;
+    }
+
+    public void AssignOarPath(OarPathTimed oarPath1) {
+        oarPath = oarPath1;
+    }
+
+    public void AssignGrabOarCollider(Collider grabOar) {
+        grabOarCollider = grabOar;
     }
 }

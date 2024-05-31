@@ -2017,12 +2017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a15263f7bc9f476fba8c9bc525662c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: {fileID: 877165380}
-  grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 1506222785}
-  prevOarActive: 0
-  firstOar: 0
-  oarPath: {fileID: 964766663}
   stroke: 1
 --- !u!1 &940912674 stripped
 GameObject:
@@ -2041,12 +2035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a15263f7bc9f476fba8c9bc525662c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: {fileID: 940912674}
-  grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 1422198982}
-  prevOarActive: 0
-  firstOar: 0
-  oarPath: {fileID: 964766663}
   stroke: 0
 --- !u!1 &964766660
 GameObject:
@@ -2100,7 +2088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6a631203e5942d49a0ff18935ad4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oarPath: {fileID: 964766660}
+  grabOarCollider: {fileID: 1419956583}
   phantomOars:
   - {fileID: 1422198977}
   - {fileID: 198390929}
@@ -2524,12 +2512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a15263f7bc9f476fba8c9bc525662c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: {fileID: 1236012288}
-  grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 1552172101}
-  prevOarActive: 0
-  firstOar: 0
-  oarPath: {fileID: 964766663}
   stroke: 0
 --- !u!4 &1250278721 stripped
 Transform:
@@ -2924,12 +2906,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a15263f7bc9f476fba8c9bc525662c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: {fileID: 1422198977}
-  grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 2053385996376848807}
-  prevOarActive: 0
-  firstOar: 1
-  oarPath: {fileID: 964766663}
   stroke: 1
 --- !u!1001 &1472414076
 PrefabInstance:
@@ -3108,12 +3084,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a15263f7bc9f476fba8c9bc525662c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: {fileID: 1506222780}
-  grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 1776310469}
-  prevOarActive: 0
-  firstOar: 0
-  oarPath: {fileID: 964766663}
   stroke: 1
 --- !u!1001 &1552172093
 PrefabInstance:
@@ -3238,12 +3208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a15263f7bc9f476fba8c9bc525662c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: {fileID: 1552172096}
-  grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 940912679}
-  prevOarActive: 0
-  firstOar: 0
-  oarPath: {fileID: 964766663}
   stroke: 0
 --- !u!1 &1554182110
 GameObject:
@@ -3608,12 +3572,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a15263f7bc9f476fba8c9bc525662c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: {fileID: 1776310464}
-  grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 1236012289}
-  prevOarActive: 0
-  firstOar: 0
-  oarPath: {fileID: 964766663}
   stroke: 0
 --- !u!1 &1838698147
 GameObject:
@@ -4834,12 +4792,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a15263f7bc9f476fba8c9bc525662c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  space: {fileID: 198390929}
-  grabOarCollider: {fileID: 1419956583}
-  nextOar: {fileID: 877165381}
-  prevOarActive: 0
-  firstOar: 0
-  oarPath: {fileID: 964766663}
   stroke: 1
 --- !u!1 &3126449931756207013
 GameObject:
