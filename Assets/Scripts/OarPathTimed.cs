@@ -6,11 +6,9 @@ using TMPro;
 public class OarPathTimed : MonoBehaviour
 {
     // helps the oar path locate itself (to disable the game object) and the oars
-    public GameObject oarPath;
+    public Collider grabOarCollider;
     public GameObject[] phantomOars;
-    // TO DO: make it so that you just have to assign the gameobjects in the editor
-    // and then in start it goes through and gets these components
-    public PhantomOarTimed[] phantomOarComponents;
+    private List<PhantomOarTimed> phantomOarComponents = new List<PhantomOarTimed>();
 
     // score variable- can this be private? does it matter?
     int score = 0;
@@ -34,18 +32,29 @@ public class OarPathTimed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // this ui activation seems redundant but leaving for now until there is time to make sure 
-        // removing it doesnt break anything
         learnForward.SetActive(true);
 
         // figure out how many oar targets there are
+        // assumes equal number in stroke and recovery, would need to be modified if not
         int oarCount = phantomOars.Length;
-        // replaced magic numbers- confirm function week 4
         stroke = time / oarCount;
         recovery = 2 * stroke;
         split = oarCount / 2;
         perStroke = stroke / split;
         perRecovery = recovery / split;
+
+        foreach (GameObject oar in phantomOars) {
+            phantomOarComponents.Add(oar.GetComponent<PhantomOarTimed>());
+        }
+
+        for (int i = 0; i < oarCount - 1; i++) {
+            phantomOarComponents[i].AssignNextOar(phantomOarComponents[i+1]);
+            phantomOarComponents[i].AssignOarPath(this);
+            phantomOarComponents[i].AssignGrabOarCollider(grabOarCollider);
+        }
+        phantomOarComponents[oarCount-1].AssignNextOar(phantomOarComponents[0]);
+        phantomOarComponents[oarCount-1].AssignOarPath(this);
+        phantomOarComponents[oarCount-1].AssignGrabOarCollider(grabOarCollider);
     }
 
     // Update is called once per frame
